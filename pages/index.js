@@ -8,7 +8,7 @@ const Home = ({ start, startScript, chars, setChars }) => {
   [chars, setChars] = useState("");
 
   return (
-    <div className="mr-auto max-w-md overflow-hidden">
+    <div className="content-center max-w-md h-screen overflow-hidden">
       <Head>
         <title>🐝 Bee Movie 🐝 </title>
         <link rel="icon" href="/favicon.ico" />

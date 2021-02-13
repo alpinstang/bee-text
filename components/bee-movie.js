@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import text from "./data";
+import { part1, part2, part3, part4 } from "./data";
+import LeftChat from "./left-chat";
+import RightChat from "./right-chat";
 
 const BeeMovie = ({}) => {
   const [time, setTime] = useState(0);
-  const [chars, setChars] = useState(null);
+  const [words, setChars] = useState(null);
   useEffect(() => {
-    if (chars === null) {
-      console.log("setting chars");
-      init();
-    }
+    init();
     const timer = window.setInterval(() => {
       setTime((prevTime) => prevTime + 1); // <-- Change this line!
     }, 1000);
@@ -19,9 +18,10 @@ const BeeMovie = ({}) => {
 
   const getChars = () => {
     return new Promise((resolve, reject) => {
+      setChars(part1.split(/[ ]+/));
       const error = false;
       if (!error) {
-        resolve(text.split(""));
+        resolve();
       } else {
         reject("Error: Something went wrong!");
       }
@@ -29,45 +29,21 @@ const BeeMovie = ({}) => {
   };
 
   async function init() {
-    await getChars().then((res) => {
-      (res) => setChars(res);
-    });
+    console.log("is loading");
+    await getChars();
+    console.log("loaded");
   }
 
   return (
-    <div className="flex flex-col mt-2 ml-auto space-y-3 mb-20 pb-3 max-h-100 overflow-hidden">
+    <div className="flex flex-col mt-2 ml-auto space-y-3 pb-3 overflow-hidden">
       <div className="max-h-95 flex flex-col bg-white">
         <div
           id="chat"
-          className="flex flex-col mt-2 overflow-y-scroll	space-y-3 mb-20 pb-3 "
+          className="flex flex-col mt-2 overflow-y-scroll h-screen space-y-3 mb-20 pb-3 "
         >
-          <div className="w-max ml-auto break-all mt-2 mb-1 p-2 rounded-br-none bg-blue-500 rounded-2xl text-white text-left mr-5">
-            2/10
-          </div>
-          <div className="w-max ml-auto break-all mt-2 mb-1 p-2 rounded-br-none bg-blue-500 rounded-2xl text-white text-left mr-5">
-            But numbers can
-          </div>
-          <div className="other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2">
-            Aww thx!!
-          </div>
-          <div className="w-max ml-auto break-all mt-2 mb-1 p-2 rounded-br-none bg-blue-500 rounded-2xl text-white text-left mr-5">
-            Words can't describe how beautiful you are :)
-          </div>
-          <div className="other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2">
-            Words can't decsribe how ugly you are ;)
-          </div>
-          <div className="other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2">
-            Words can't decsribe how ugly you are ;)
-          </div>
-          <div className="other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2">
-            Words can't decsribe how ugly you are ;)
-          </div>
-          <div className="other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2">
-            Words can't decsribe how ugly you are ;)
-          </div>
-          <div className="other break-all mt-2  ml-5 rounded-bl-none float-none bg-gray-300 mr-auto rounded-2xl p-2">
-            Words can't decsribe how ugly you are ;)
-          </div>
+          {words ? words.map((word) => <LeftChat message={word} />) : "Dammit"}
+
+          <RightChat message={words} />
         </div>
       </div>
 

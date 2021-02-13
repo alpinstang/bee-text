@@ -1,4 +1,4 @@
-const script = `
+export const part1 = `
 Bee Movie Script - Dialogue Transcript
 According to all known laws
 of aviation,
@@ -154,8 +154,9 @@ You ever think maybe things
 work a little too well here?
 Like what? Give me one example.
 I don't know. But you know
-what I'm talking about.
-Please clear the gate.
+what I'm talking about.`;
+
+export const part2 = `Please clear the gate.
 Royal Nectar Force on approach.
 Wait a second. Oheck it out.
 - Hey, those are Pollen Jocks!
@@ -340,7 +341,9 @@ Black and yellow!
 Hello!
 You ready for this, hot shot?
 Yeah. Yeah, bring it on.
-Wind, check.
+`;
+
+export const part3 = `Wind, check.
 - Antennae, check.
 - Nectar pack, check.
 - Wings, check.
@@ -493,7 +496,8 @@ I gotta say something.
 All right, here it goes.
 Nah.
 What would I say?
-I could really get in trouble.
+`;
+export const part4 = `I could really get in trouble.
 It's a bee law.
 You're not supposed to talk to a human.
 I can't believe I'm doing this.
@@ -667,7 +671,9 @@ to humans that attack our homes
 with power washers and M-80s!
 One-eighth a stick of dynamite!
 She saved my life!
-And she understands me.
+`;
+
+export const part5 = `And she understands me.
 This is over!
 Eat this.
 This is not over! What was that?
@@ -847,7 +853,9 @@ I'm going to Tacoma.
 - He really is dead.
 All right.
 Uh-oh!
-- What is that?!
+`;
+
+export const part6 = `- What is that?!
 - Oh, no!
 - A wiper! Triple blade!
 - Triple blade?
@@ -1030,7 +1038,8 @@ I'm helping him sue the human race.
 - Hello.
 - Hello, bee.
 This is Ken.
-Yeah, I remember you. Timberland, size
+`;
+export const part7 = `Yeah, I remember you. Timberland, size
 ten and a half. Vibram sole, I believe.
 Why does he talk again?
 Listen, you better go
@@ -1221,7 +1230,8 @@ I think the jury's on our side.
 Are we doing everything right, legally?
 I'm a florist.
 Right. Well, here's to a great team.
-To a great team!
+`;
+export const part8 = `To a great team!
 Well, hello.
 - Ken!
 - Hello.
@@ -1417,7 +1427,9 @@ It is? It's not over?
 Get dressed. I've gotta go somewhere.
 Get back to the court and stall.
 Stall any way you can.
-And assuming you've done step correctly, you're ready for the tub.
+`;
+
+export const part9 = `And assuming you've done step correctly, you're ready for the tub.
 Mr. Flayman.
 Yes? Yes, Your Honor!
 Where is the rest of your team?
@@ -1975,4 +1987,3 @@ All right. Take ten, everybody.
 Wrap it up, guys.
 I had virtually no rehearsal for that.
 `;
-export default script;
